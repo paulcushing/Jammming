@@ -94,8 +94,6 @@ class Spotify {
   };
 
   savePlaylist = (playlistName, playlist) => {
-    console.log('Saving...');
-    //console.log(playlist);
     this.getUserId().then(userId => {
       const endPoint = `https://api.spotify.com/v1/users/${userId}/playlists`;
       const corsHelper = 'https://cors-anywhere.herokuapp.com/';

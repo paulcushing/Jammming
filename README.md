@@ -30,6 +30,6 @@ After the code is reviewed, there are a handful of improvements I'd like to make
 
 ### Demo
 
-Currently deployed at [https://happy-edison-ed4e45.netlify.com] courtesy of the amazing folks at Netlify.
+Currently deployed at https://happy-edison-ed4e45.netlify.com courtesy of the amazing folks at Netlify.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

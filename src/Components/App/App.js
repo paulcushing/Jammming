@@ -27,9 +27,7 @@ class App extends Component {
         if (result !== undefined) {
           this.setState({ searchResults: result });
         } else {
-          console.log(
-            'You may need to renew your login or you forgot a search term'
-          );
+          spotify.authorize();
         }
       });
     } else {

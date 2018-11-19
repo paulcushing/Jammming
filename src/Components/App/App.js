@@ -78,13 +78,15 @@ class App extends Component {
   };
 
   handleCloseDialog = e => {
-    e.preventDefault();
     this.setState({ dialogMessage: '' });
   };
 
   render() {
+    const fullHeight = {
+      height: '100%'
+    };
     return (
-      <div>
+      <div style={fullHeight}>
         <h1>
           Ja<span className="highlight">mmm</span>ing
         </h1>

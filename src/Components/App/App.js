@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
+import Dialog from '../Dialog/Dialog';
 import Spotify from '../../Spotify/Spotify';
 
 const spotify = new Spotify();
@@ -15,7 +16,8 @@ class App extends Component {
       term: '',
       searchResults: {},
       playlistName: 'New Playlist',
-      playlist: []
+      playlist: [],
+      dialogMessage: ''
     };
   }
 
@@ -57,10 +59,27 @@ class App extends Component {
   };
 
   handleSavePlaylist = e => {
-    const playlistUris = this.state.playlist.map(item => {
-      return item.uri;
-    });
-    spotify.savePlaylist(this.state.playlistName, playlistUris);
+    if (this.state.playlistName === 'New Playlist') {
+      this.setState({ dialogMessage: "Don't forget to name your playlist" });
+    } else {
+      const playlistUris = this.state.playlist.map(item => {
+        return item.uri;
+      });
+      spotify.savePlaylist(this.state.playlistName, playlistUris);
+
+      this.setState({
+        dialogMessage: 'Success! Your playlist has been saved.',
+        playlistName: 'New Playlist',
+        playlist: [],
+        term: '',
+        searchResults: {}
+      });
+    }
+  };
+
+  handleCloseDialog = e => {
+    e.preventDefault();
+    this.setState({ dialogMessage: '' });
   };
 
   render() {
@@ -76,7 +95,9 @@ class App extends Component {
             onChange={this.handleTermChange}
             term={this.state.term}
           />
-          <div className="App-playlist">
+          <div
+            className={this.state.auth ? 'App-playlist' : 'App-playlist hidden'}
+          >
             <SearchResults
               results={this.state.searchResults}
               onClick={this.handleAddTrack}
@@ -90,6 +111,12 @@ class App extends Component {
             />
           </div>
         </div>
+        {this.state.dialogMessage === '' ? null : (
+          <Dialog
+            message={this.state.dialogMessage}
+            onClick={this.handleCloseDialog}
+          />
+        )}
       </div>
     );
   }

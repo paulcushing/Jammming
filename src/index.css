@@ -70,6 +70,10 @@ h2 {
   font-size: 1rem;
 }
 
+.hidden {
+  display: none;
+}
+
 .SearchBar input:focus {
   outline: none;
 }
@@ -83,6 +87,7 @@ h2 {
   text-align: center;
   font-size: 0.833rem;
   transition: background-color 0.25s;
+  padding: 20px 30px;
 }
 
 .SearchBar a:hover {
@@ -197,4 +202,69 @@ h2 {
   font-size: 0.83rem;
   font-weight: 300;
   color: rgba(256, 256, 256, 0.8);
+}
+
+/* -- Dialog Modal -- */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+  opacity: 1;
+}
+
+.modal--align-top {
+  align-items: flex-start;
+}
+.modal__bg {
+  background: transparent;
+}
+.modal__dialog {
+  max-width: 600px;
+  padding: 1.2rem;
+}
+.modal__content {
+  position: relative;
+  padding: 2.5rem 3.4rem;
+  background: #ffebee;
+  background-clip: padding-box;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
+  opacity: 1;
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+.modal__content--active {
+  opacity: 1;
+}
+.modal__close {
+  z-index: 1100;
+  cursor: pointer;
+}
+
+.demo-close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  margin: 1.2rem;
+  padding: 0.2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.demo-close svg {
+  width: 24px;
+  fill: #fff;
+  pointer-events: none;
+  vertical-align: top;
+}
+.demo-close:hover {
+  background: rgba(0, 0, 0, 0.6);
 }

@@ -22,11 +22,11 @@ This is a React application written for the CodeAcademy.com's [**Build Front-End
 
 After the code is reviewed, there are a handful of improvements I'd like to make.
 
-- Prior to giving permission through Spotify, I'd like to change the button to "Authenticate with Spotify" or something along those lines.
+[x] Prior to giving permission through Spotify, I'd like to change the button to "Authenticate with Spotify" or something along those lines.
 
-- In the add track to playlist handler, I think I'll check if the song is already in the playlist to eliminate duplicates. It would also be good to remove the added song from the search results track list.
+[] In the add track to playlist handler, I think I'll check if the song is already in the playlist to eliminate duplicates. It would also be good to remove the added song from the search results track list.
 
-- I'll implement a dialog confirming that the new playlist was saved to Spotify. I could also include a link to the newly created list within Spotify.
+[x] I'll implement a dialog confirming that the new playlist was saved to Spotify.
 
 ### Demo
 

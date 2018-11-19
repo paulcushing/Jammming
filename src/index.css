@@ -4,6 +4,14 @@ html,
   height: 100%;
 }
 
+body {
+  background-image: url('./background_photo_desktop.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 html {
   font-size: 18px;
 }
@@ -27,13 +35,7 @@ h2 {
 }
 
 .App {
-  min-height: 100%;
   padding: 0 17% 10% 17%;
-  background-image: url('./background_photo_desktop.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   font-family: 'Work Sans', sans-serif;
   font-weight: 500;
   color: #fff;

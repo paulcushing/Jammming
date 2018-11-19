@@ -8,7 +8,7 @@ class Dialog extends Component {
           <div className="modal__content">
             <p>{this.props.message}</p>
 
-            <a
+            <button
               href=""
               className="modal__close demo-close"
               onClick={this.props.onClick}
@@ -17,7 +17,7 @@ class Dialog extends Component {
                 <path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z" />
                 <path d="M0 0h24v24h-24z" fill="none" />
               </svg>
-            </a>
+            </button>
           </div>
         </div>
       </div>

@@ -18,7 +18,11 @@ class Spotify {
   };
 
   checkAuthority = () => {
-    if (this.getAccessToken()) {
+    if (this.getHashParams().access_token) {
+      localStorage.setItem('token', this.getAccessToken());
+      window.history.replaceState({}, document.title, '/');
+      return true;
+    } else if (localStorage.getItem('token')) {
       return true;
     } else {
       return false;
@@ -32,7 +36,7 @@ class Spotify {
     const limit = '&limit=15';
 
     return fetch(corsHelper + endPoint + term + typeQuery + limit, {
-      headers: { Authorization: `Bearer ${this.getAccessToken()}` }
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
       .then(response => {
         return response.json();
@@ -78,7 +82,7 @@ class Spotify {
     const corsHelper = 'https://cors-anywhere.herokuapp.com/';
 
     return fetch(corsHelper + endPoint, {
-      headers: { Authorization: `Bearer ${this.getAccessToken()}` }
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
       .then(response => {
         return response.json();
@@ -106,7 +110,7 @@ class Spotify {
 
       fetch(corsHelper + endPoint, {
         headers: {
-          Authorization: `Bearer ${this.getAccessToken()}`,
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
           Accept: 'application/json'
         },
         method: 'POST',
@@ -125,7 +129,7 @@ class Spotify {
 
           fetch(corsHelper + addSongsEndPoint, {
             headers: {
-              Authorization: `Bearer ${this.getAccessToken()}`,
+              Authorization: `Bearer ${localStorage.getItem('token')}`,
               Accept: 'application/json'
             },
             method: 'POST',

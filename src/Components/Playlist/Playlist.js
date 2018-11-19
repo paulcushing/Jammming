@@ -18,9 +18,9 @@ class Playlist extends Component {
             );
           })}
         </div>
-        <a className="Playlist-save" onClick={this.props.onSave}>
+        <button className="Playlist-save" onClick={this.props.onSave}>
           SAVE TO SPOTIFY
-        </a>
+        </button>
       </div>
     );
   }

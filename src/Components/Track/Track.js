@@ -29,9 +29,9 @@ class Track extends Component {
             {this.props.item.artists[0].name} | {this.props.item.album.name}
           </p>
         </div>
-        <a className="Track-action" onClick={this.onClick}>
+        <button className="Track-action" onClick={this.onClick}>
           {action}
-        </a>
+        </button>
       </div>
     );
   }

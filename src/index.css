@@ -78,19 +78,21 @@ h2 {
   outline: none;
 }
 
-.SearchBar a {
+.SearchBar button {
   cursor: pointer;
   width: 8.11rem;
   padding: 0.77rem 0;
   border-radius: 54px;
+  color: #ffffff;
   background-color: #010c3f;
   text-align: center;
   font-size: 0.833rem;
   transition: background-color 0.25s;
   padding: 20px 30px;
+  border: none;
 }
 
-.SearchBar a:hover {
+.SearchBar button:hover {
   background-color: rgba(108, 65, 233, 0.7);
 }
 
@@ -139,6 +141,8 @@ h2 {
 }
 
 .Playlist-save {
+  color: #ffffff;
+  border: none;
   cursor: pointer;
   width: 10rem;
   padding: 0.77rem 0;
@@ -180,6 +184,9 @@ h2 {
   padding: 0.5rem;
   font-size: 1.05rem;
   transition: color 0.25s;
+  background: none;
+  border: none;
+  color: white;
 }
 
 .Track-action:hover {

@@ -14,7 +14,7 @@ class SearchBar extends Component {
           onChange={this.props.onChange}
           className={inputStatus}
         />{' '}
-        <a onClick={this.props.onClick}>{buttonText}</a>
+        <button onClick={this.props.onClick}>{buttonText}</button>
       </div>
     );
   }

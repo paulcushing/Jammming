@@ -15,6 +15,7 @@ class Track extends Component {
 
   render() {
     let action = '';
+
     if (this.props.context === 'SearchResults') {
       action = '+';
     } else {

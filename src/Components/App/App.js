@@ -40,7 +40,11 @@ class App extends Component {
   };
 
   handleAddTrack = item => {
-    /** To-Do: Check if in playlist already before adding. */
+    let newResults = this.state.searchResults.filter(function(obj) {
+      return obj.id !== item.id;
+    });
+
+    this.setState({ searchResults: newResults });
     this.setState({ playlist: [...this.state.playlist, item] });
   };
 

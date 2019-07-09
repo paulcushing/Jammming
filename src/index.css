@@ -191,6 +191,24 @@ h2 {
   border-bottom: 1px solid rgba(256, 256, 256, 0.8);
 }
 
+.Track-enter {
+  opacity: 0.01;
+}
+
+.Track-enter.Track-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.Track-leave {
+  opacity: 1;
+}
+
+.Track-leave.Track-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
 .Track-action {
   cursor: pointer;
   padding: 0.5rem;
